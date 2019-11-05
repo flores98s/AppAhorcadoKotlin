@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Lista"
+    tools:showIn="@layout/activity_lista">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lista de palabras"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/lista"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textIsSelectable="false"
+            android:textStyle="italic">
+
+        </TextView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                app:counterMaxLength="25"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5">
+
+                <EditText
+                    android:id="@+id/et_eliminar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="qwertyuiopasdfghjklzxcvbnmñáéíóúQWERTYUIOPASDFGHJKLZXCVBNMÑÁÉÍÓÚ"
+                    android:focusable="auto"
+                    android:hint="Ingrese la palabra a eliminar" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/brn_eliminar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:backgroundTint="#F44336"
+                android:text="Eliminar"
+                android:textColor="#FFFFFF"
+                android:onClick="eliminar"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                app:counterMaxLength="25"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5">
+
+                <EditText
+                    android:id="@+id/et_guardar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="qwertyuiopasdfghjklzxcvbnmñáéíóúQWERTYUIOPASDFGHJKLZXCVBNMÑÁÉÍÓÚ"
+                    android:focusable="auto"
+                    android:hint="Ingrese la palabra a agregar" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/brn_guardar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:backgroundTint="#009688"
+                android:text="Guardar"
+                android:textColor="#FFFFFF"
+                android:onClick="agregar"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/brn_regresar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#00BCD4"
+            android:onClick="back"
+            android:text="Regresar"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
